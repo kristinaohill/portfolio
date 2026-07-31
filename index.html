@@ -304,6 +304,31 @@
     border-radius: 6px;
   }
 
+  .demo-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 22px 24px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--teal);
+    transition: background 0.15s ease;
+  }
+
+  .demo-link:hover { background: #DFEBE7; }
+
+  .demo-link .demo-title {
+    color: var(--teal-deep);
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .demo-link .demo-note {
+    display: block;
+    margin-top: 6px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+
   /* ---------- OTHER WORK ---------- */
 
   .other-work {
@@ -448,7 +473,10 @@
       </div>
 
       <div class="media-frame">
-        <div class="media-placeholder">Screens coming soon — Figma case study in progress</div>
+        <a class="demo-link" href="https://kristinaohill.github.io/ApproviaVersionDashboard/" target="_blank" rel="noopener">
+          <span class="demo-title">Live interactive demo — explore the dashboard →</span>
+          <span class="demo-note">A representative rebuild of the publication-management UX (Publications, Grants, IIS, and MLR dashboards) — not BP Logix's actual proprietary product.</span>
+        </a>
       </div>
     </section>
 
