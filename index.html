@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kristina O'Connell Hill — UX & Product Design Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F7F4;
+    --bg-card: #EAF1EE;
+    --ink: #16221E;
+    --ink-soft: #46534E;
+    --teal: #0E6E73;
+    --teal-deep: #0A4F53;
+    --amber: #C98A3B;
+    --line: #CBD8D3;
+    --paper: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  a { color: var(--teal); }
+
+  .mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  header.hero {
+    padding: 88px 0 64px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .hero-photo {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .hero-left {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+
+  h1.name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 38px;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px 0;
+    color: var(--ink);
+  }
+
+  .role-line {
+    font-size: 16px;
+    color: var(--teal-deep);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+
+  .contact-block a { color: var(--teal-deep); text-decoration: none; }
+  .contact-block a:hover { text-decoration: underline; }
+
+  .pitch {
+    margin-top: 28px;
+    max-width: 620px;
+    font-size: 17px;
+    color: var(--ink-soft);
+  }
+
+  .pitch em { color: var(--teal-deep); font-style: normal; font-weight: 500; }
+
+  .tags {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--teal-deep);
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  .resume-btn {
+    margin-top: 26px;
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .resume-btn:hover { background: var(--teal-deep); }
+
+  /* ---------- GROWTH LINE + SECTIONS ---------- */
+
+  .timeline {
+    position: relative;
+    padding: 64px 0 40px 0;
+  }
+
+  .growth-track {
+    position: absolute;
+    left: 32px;
+    top: 64px;
+    bottom: 40px;
+    width: 2px;
+    background: var(--line);
+  }
+
+  .growth-fill {
+    position: absolute;
+    left: 32px;
+    top: 64px;
+    width: 2px;
+    background: var(--teal);
+    height: 0%;
+    transition: height 0.15s linear;
+  }
+
+  .case-study {
+    position: relative;
+    padding: 0 0 88px 76px;
+  }
+
+  .node {
+    position: absolute;
+    left: 32px;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--line);
+    transform: translateX(-50%);
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+
+  .case-study.in-view .node {
+    border-color: var(--teal);
+    background: var(--teal);
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    margin: 0 0 10px 0;
+  }
+
+  h2.cs-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 27px;
+    margin: 0 0 6px 0;
+  }
+
+  .cs-title a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--teal);
+  }
+  .cs-title a:hover { color: var(--teal-deep); }
+
+  .cs-meta {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+
+  .cs-meta .sep { margin: 0 8px; color: var(--line); }
+
+  .cs-block {
+    margin-bottom: 22px;
+  }
+
+  .cs-block h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--teal-deep);
+    margin: 0 0 8px 0;
+  }
+
+  .cs-block p {
+    margin: 0;
+    color: var(--ink-soft);
+    max-width: 620px;
+  }
+
+  .media-frame {
+    margin: 22px 0;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 14px;
+  }
+
+  .media-placeholder {
+    border: 1.5px dashed var(--line);
+    border-radius: 8px;
+    padding: 46px 20px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 13px;
+    background: var(--bg-card);
+  }
+
+  .media-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+  }
+
+  .logo-inline {
+    width: 46px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  /* ---------- OTHER WORK ---------- */
+
+  .other-work {
+    padding: 0 0 0 76px;
+    position: relative;
+  }
+
+  .other-work h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin: 0 0 16px 0;
+  }
+
+  .other-item {
+    margin-bottom: 14px;
+    font-size: 14.5px;
+  }
+
+  .other-item .co {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .other-item .role {
+    color: var(--teal-deep);
+  }
+
+  .other-item .desc {
+    color: var(--ink-soft);
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 0 64px 0;
+    margin-top: 40px;
+  }
+
+  footer .foot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  footer .links a {
+    margin-left: 18px;
+    font-size: 13px;
+    color: var(--teal-deep);
+    text-decoration: none;
+  }
+  footer .links a:first-child { margin-left: 0; }
+  footer .links a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    h1.name { font-size: 30px; }
+    .hero-row { flex-direction: column; }
+    .contact-block { text-align: left; }
+    .growth-track, .growth-fill { left: 18px; }
+    .node { left: 18px; }
+    .case-study, .other-work { padding-left: 46px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .growth-fill { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-row">
+      <div class="hero-left">
+        <img class="hero-photo" src="assets/headshot.png" alt="Kristina O'Connell Hill">
+        <div>
+          <h1 class="name">Kristina O'Connell Hill</h1>
+          <p class="role-line">UX & Product Design Leader</p>
+        </div>
+      </div>
+      <div class="contact-block mono">
+        Charleston, SC<br>
+        <a href="mailto:kristinaohill@gmail.com">kristinaohill@gmail.com</a><br>
+        <a href="https://linkedin.com/in/kristinaocconnellhill">linkedin.com/in/kristinaocconnellhill</a><br>
+        <a href="https://github.com/kristinaohill">github.com/kristinaohill</a>
+      </div>
+    </div>
+
+    <p class="pitch">Nearly 17 years turning ambiguous problems into clear, user-centered software — with direct experience in <em>regulated pharma content</em> and <em>chronic-disease, clinical-data patient experiences</em>. Currently focused on designing <em>trustworthy AI-driven workflows</em> and human-in-the-loop experiences.</p>
+
+    <div class="tags">
+      <span class="tag">AI-UX Design</span>
+      <span class="tag">Design Systems</span>
+      <span class="tag">Healthcare / Pharma</span>
+      <span class="tag">Claude Code</span>
+      <span class="tag">Figma</span>
+      <span class="tag">0→1 Product</span>
+    </div>
+
+    <a class="resume-btn" href="Kristina_OConnell_Hill_Resume.pdf" download>Download Résumé →</a>
+  </header>
+
+  <div class="timeline">
+    <div class="growth-track"></div>
+    <div class="growth-fill" id="growthFill"></div>
+
+    <!-- CASE STUDY 1: BP LOGIX -->
+    <section class="case-study" data-cs>
+      <div class="node"></div>
+      <p class="eyebrow">Case Study 01</p>
+      <h2 class="cs-title">PubPro — AI Publication Management for Pharma</h2>
+      <p class="cs-meta">BP Logix <span class="sep">·</span> Senior Product Manager and UX Evangelist <span class="sep">·</span> Mar 2022 – Present</p>
+
+      <div class="cs-block">
+        <h4>The problem</h4>
+        <p>Pharmaceutical companies manage publication workflows — scientific content that is high-stakes, compliance-bound, and increasingly touched by AI. Teams needed AI assistance without losing trust in the accuracy of medical and scientific content.</p>
+      </div>
+
+      <div class="cs-block">
+        <h4>My approach</h4>
+        <p>I led UX strategy for AI-driven features on PubPro, designing interaction models that keep AI agents transparent and appropriately deferential to human oversight — surfacing confidence, sourcing, and the moments where a human reviewer needs to step in, rather than letting AI output pass as fact.</p>
+      </div>
+
+      <div class="cs-block">
+        <h4>Outcome</h4>
+        <p>A research-informed roadmap and shipped AI features that pharma stakeholders trust precisely because the design never hides where the AI's judgment ends and a human's begins.</p>
+      </div>
+
+      <div class="media-frame">
+        <div class="media-placeholder">Screens coming soon — Figma case study in progress</div>
+      </div>
+    </section>
+
+    <!-- CASE STUDY 2: ALYKA HEALTH -->
+    <section class="case-study" data-cs>
+      <div class="node"></div>
+      <p class="eyebrow">Case Study 02</p>
+      <h2 class="cs-title"><a href="https://apps.apple.com/us/app/alyka-heart-health-advisor/id1569324354" target="_blank" rel="noopener">ALYKA — Chronic Disease Risk Management</a></h2>
+      <p class="cs-meta">ALYKA Health <span class="sep">·</span> Senior UX Designer <span class="sep">·</span> Feb 2021 – Jan 2022 <span class="sep">·</span> live on the App Store</p>
+
+      <div class="cs-block">
+        <h4>The problem</h4>
+        <p>Cardiovascular risk is shaped by dozens of everyday factors — sleep, stress, diet, activity, medication adherence — scattered across EHRs, home health devices, and a patient's own memory. Nobody had one clear picture of it.</p>
+      </div>
+
+      <div class="cs-block">
+        <h4>My approach</h4>
+        <p>I led a small UX/UI team building ALYKA from the ground up: flows that pull EHR data, device data, and self-reported input into a single personalized wellness report and heart-risk score, then translate that into a simple daily plan — goals, screening reminders, and a care team a patient can actually coordinate in one place.</p>
+      </div>
+
+      <div class="cs-block">
+        <h4>Outcome</h4>
+        <p>A 0-to-1 app shipped to the App Store that turns clinical complexity into something a patient can understand and act on daily, without feeling like a medical chart.</p>
+      </div>
+
+      <div class="media-frame">
+        <div class="media-placeholder">App Store listing linked above — screenshots available on request</div>
+      </div>
+    </section>
+
+    <!-- CASE STUDY 3: RAISEDBED AI -->
+    <section class="case-study" data-cs>
+      <div class="node"></div>
+      <p class="eyebrow">Case Study 03 — Independent Build</p>
+      <h2 class="cs-title">
+        <img class="logo-inline" src="assets/raisedbed-logo.png" alt="Raisedbed AI logo">
+        <a href="https://apps.apple.com/us/app/raisedbed-ai-garden-planner/id6778829093" target="_blank" rel="noopener">Raisedbed AI — Personalized Garden Planning</a>
+      </h2>
+      <p class="cs-meta">Creator, designer & builder <span class="sep">·</span> Jun 2026 – Present <span class="sep">·</span> live on the App Store, revenue-generating</p>
+
+      <div class="cs-block">
+        <h4>The problem</h4>
+        <p>Generic gardening advice ignores what actually matters: your ZIP code, your USDA hardiness zone, your local frost dates. Most gardening apps give the same tips to everyone.</p>
+      </div>
+
+      <div class="cs-block">
+        <h4>My approach</h4>
+        <p>I designed and built the entire product end-to-end using Claude Code — from interaction design through working code — reasoning over structured location and climate inputs to generate genuinely personalized guidance per user, not templated content.</p>
+      </div>
+
+      <div class="cs-block">
+        <h4>Outcome</h4>
+        <p>A live, independently-shipped App Store app now generating revenue from paying users — proof I can take an AI product from idea to production without a hand-off.</p>
+      </div>
+
+      <div class="media-frame">
+        <div class="media-placeholder">App Store screenshots coming soon</div>
+      </div>
+    </section>
+
+    <!-- OTHER WORK -->
+    <div class="other-work">
+      <h3>Other Experience</h3>
+
+      <div class="other-item">
+        <span class="co">BoomTown</span> — <span class="role">Product Owner (CRM) & Senior Product Designer</span>
+        <span class="desc">Sep 2013 – Mar 2022 · Directed feature design across desktop, iOS, and Android; built and championed accessibility standards company-wide.</span>
+      </div>
+
+      <div class="other-item">
+        <span class="co">SPARC</span> — <span class="role">UX Designer</span>
+        <span class="desc">Jul 2012 – Sep 2013 · Guided product direction from the user's perspective; ran user testing ahead of visual handoff.</span>
+      </div>
+
+      <div class="other-item">
+        <span class="co">Blackbaud</span> — <span class="role">Interaction Designer</span>
+        <span class="desc">Aug 2009 – Jul 2012 · Designed and prototyped mobile interfaces across iOS, Android, and Windows.</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-row">
+      <p>Charleston, SC — open to remote roles</p>
+      <div class="links">
+        <a href="mailto:kristinaohill@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/kristinaocconnellhill">LinkedIn</a>
+        <a href="https://github.com/kristinaohill">GitHub</a>
+        <a href="Kristina_OConnell_Hill_Resume.pdf" download>Résumé</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Growth line fill based on scroll progress through the timeline
+  const track = document.querySelector('.growth-track');
+  const fill = document.getElementById('growthFill');
+  const caseStudies = document.querySelectorAll('[data-cs]');
+
+  function updateGrowth() {
+    const rect = track.getBoundingClientRect();
+    const trackHeight = track.offsetHeight;
+    const viewportMid = window.innerHeight * 0.5;
+    let progress = (viewportMid - rect.top) / trackHeight;
+    progress = Math.max(0, Math.min(1, progress));
+    fill.style.height = (progress * trackHeight) + 'px';
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.3 });
+
+  caseStudies.forEach(cs => observer.observe(cs));
+
+  window.addEventListener('scroll', updateGrowth);
+  window.addEventListener('resize', updateGrowth);
+  updateGrowth();
+</script>
+
+</body>
+</html>
