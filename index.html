@@ -329,6 +329,14 @@
     font-size: 12.5px;
   }
 
+  .demo-video {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    margin-bottom: 14px;
+  }
+
   /* ---------- OTHER WORK ---------- */
 
   .other-work {
@@ -473,6 +481,10 @@
       </div>
 
       <div class="media-frame">
+        <video class="demo-video" autoplay muted loop playsinline>
+          <source src="assets/pubpro-demo.webm" type="video/webm">
+          <source src="assets/pubpro-demo.mp4" type="video/mp4">
+        </video>
         <a class="demo-link" href="https://kristinaohill.github.io/ApproviaVersionDashboard/" target="_blank" rel="noopener">
           <span class="demo-title">Live interactive demo — explore the dashboard →</span>
           <span class="demo-note">A representative rebuild of the publication-management UX (Publications, Grants, IIS, and MLR dashboards) — not BP Logix's actual proprietary product.</span>
