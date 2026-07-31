@@ -282,7 +282,8 @@
     padding: 10px;
   }
 
-  .media-gallery img {
+  .media-gallery img,
+  .media-gallery video {
     width: 100%;
     height: 170px;
     object-fit: contain;
@@ -530,7 +531,10 @@
       <div class="media-frame">
         <div class="media-gallery">
           <figure>
-            <img src="assets/boomtown-marketing-central.png" alt="Marketing Central ad builder with Facebook ad preview">
+            <video autoplay muted loop playsinline poster="assets/boomtown-marketing-central.png" aria-label="Marketing Central ad builder with Facebook ad preview">
+              <source src="assets/boomtown-marketing-central.webm" type="video/webm">
+              <source src="assets/boomtown-marketing-central.mp4" type="video/mp4">
+            </video>
             <figcaption>Marketing Central — in-app ad builder</figcaption>
           </figure>
           <figure>
@@ -568,7 +572,10 @@
       </div>
 
       <div class="media-frame">
-        <img class="phone-shot" src="assets/alyka-wellness-checker.png" alt="ALYKA Wellness Checker onboarding screen with physical activity, stress, tobacco &amp; alcohol, and healthy eating cards">
+        <video class="phone-shot" autoplay muted loop playsinline poster="assets/alyka-wellness-checker.png" aria-label="ALYKA Wellness Checker onboarding flow">
+          <source src="assets/alyka-wellness.webm" type="video/webm">
+          <source src="assets/alyka-wellness.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
