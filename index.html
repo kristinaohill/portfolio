@@ -305,6 +305,25 @@
     border-radius: 6px;
   }
 
+  .phone-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .phone-stack figure {
+    margin: 0;
+  }
+
+  .phone-stack figcaption {
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    text-align: center;
+    max-width: 220px;
+  }
+
   .demo-link {
     display: block;
     text-decoration: none;
@@ -495,10 +514,22 @@
       </div>
 
       <div class="media-frame">
-        <video class="phone-shot" autoplay muted loop playsinline poster="assets/raisedbed-poster.jpg" aria-label="Raisedbed AI Garden Bud chat demo">
-          <source src="assets/raisedbed-demo.webm" type="video/webm">
-          <source src="assets/raisedbed-demo.mp4" type="video/mp4">
-        </video>
+        <div class="phone-stack">
+          <figure>
+            <video class="phone-shot" autoplay muted loop playsinline poster="assets/raisedbed-camera-poster.jpg" aria-label="Raisedbed AI camera capture and plant identification">
+              <source src="assets/raisedbed-camera.webm" type="video/webm">
+              <source src="assets/raisedbed-camera.mp4" type="video/mp4">
+            </video>
+            <figcaption>Camera capture → plant ID &amp; care advice</figcaption>
+          </figure>
+          <figure>
+            <video class="phone-shot" autoplay muted loop playsinline poster="assets/raisedbed-poster.jpg" aria-label="Raisedbed AI Garden Bud chat demo">
+              <source src="assets/raisedbed-demo.webm" type="video/webm">
+              <source src="assets/raisedbed-demo.mp4" type="video/mp4">
+            </video>
+            <figcaption>Garden Bud — proactive planning chat</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
